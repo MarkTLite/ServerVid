@@ -20,5 +20,5 @@ COPY --from=build /api/bin/vid_api_server /api/bin/
 
 # Start server.
 EXPOSE 8080
-RUN dart run /api/bin/vid_api_server.dart
+RUN dart run /bin/vid_api_server.dart
 # CMD ["/api/bin/vid_api_server"]
