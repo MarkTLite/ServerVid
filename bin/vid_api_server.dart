@@ -14,11 +14,12 @@ Future main(List<String> arguments) async {
 
   // If PORT and address env variables are set, listen to it. Otherwise, the default 8080
   final port = int.parse(Platform.environment['PORT'] ?? '8080');
-  final address = InternetAddress.anyIPv4;
+  final address = 'localhost';
 
   //Routes
-  app.mount('/premiered/', PremVideoApi().router); //video api
   app.get('/assets/<file|.*>', createStaticHandler('public')); //files
+  app.mount('/premiered/', PremVideoApi().router); //video api
+
   //app.get('/<name|.*>', _homeHandler); //home
 
   //add Middleware Pipeline for server
