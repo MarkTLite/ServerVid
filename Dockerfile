@@ -2,7 +2,7 @@
 FROM dart:stable AS build
 
 # Resolve app dependencies.
-# WORKDIR /api
+WORKDIR /api
 COPY pubspec.* ./
 RUN dart pub get
 
@@ -16,8 +16,9 @@ RUN dart compile exe bin/vid_api_server.dart -o bin/vid_api_server
 # libraries and configuration files stored in `/runtime/` from the build stage.
 FROM scratch
 COPY --from=build /runtime/ /
-COPY --from=build /bin/vid_api_server /bin/
+COPY --from=build /api/bin/vid_api_server /api/bin/
 
 # Start server.
 EXPOSE 8080
-CMD ["/bin/vid_api_server"]
+RUN dart run /api/bin/vid_api_server.dart
+# CMD ["/api/bin/vid_api_server"]
