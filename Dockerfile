@@ -10,7 +10,7 @@ RUN dart pub get
 COPY . .
 # Ensure packages are still up-to-date if anything has changed
 RUN dart pub get --offline
-RUN dart compile exe bin/vid_api_server.dart -o bin/vid_api_server
+RUN dart compile exe bin/vid_api_server.dart -o bin/
 
 # Build minimal serving image from AOT-compiled `/vid_api_server` and required system
 # libraries and configuration files stored in `/runtime/` from the build stage.
@@ -20,5 +20,4 @@ COPY --from=build /api/bin/vid_api_server /api/bin/
 
 # Start server.
 EXPOSE 8080
-RUN dart run /bin/vid_api_server.dart
-# CMD ["/api/bin/vid_api_server"]
+CMD ["/api/bin/"]
