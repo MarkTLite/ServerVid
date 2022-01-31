@@ -13,7 +13,7 @@ Future main(List<String> arguments) async {
   FirebaseDart.setup();
 
   // If PORT and address env variables are set, listen to it. Otherwise, the default 8080
-  final port = int.parse(Platform.environment['PORT'] ?? '2000');
+  final port = int.parse(Platform.environment['PORT'] ?? '8080');
   final address = Platform.environment['BASE_ADDRESS'] ?? 'localhost';
 
   //Routes
