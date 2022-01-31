@@ -20,4 +20,4 @@ COPY --from=build /api/bin/vid_api_server /api/bin/
 
 # Start server.
 EXPOSE 8080
-CMD ["/api/bin/vid_api_server"]
+CMD ["/bin/vid_api_server"]
