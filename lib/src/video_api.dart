@@ -29,7 +29,7 @@ class PremVideoApi {
 
     //routes
     router.get('/all', _allVideosGetHandler);
-    router.post('/add', _allVideosPostHandler);
+    router.post('/add', _allVideosPostHandler); //add videos
 
     return router;
   }
