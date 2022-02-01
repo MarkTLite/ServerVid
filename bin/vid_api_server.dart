@@ -17,7 +17,7 @@ Future main(List<String> arguments) async {
   final address = 'localhost';
 
   //Routes
-  app.get('/assets/<file|.*>', createStaticHandler('/api/public')); //files
+  //app.get('/assets/<file|.*>', createStaticHandler('/api/public')); //files
   app.mount('/premiered/', PremVideoApi().router); //video api
 
   //app.get('/<name|.*>', _homeHandler); //home
