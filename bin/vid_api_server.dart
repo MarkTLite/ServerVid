@@ -20,7 +20,7 @@ Future main(List<String> arguments) async {
   //app.get('/assets/<file|.*>', createStaticHandler('/api/public')); //files
   app.mount('/premiered/', PremVideoApi().router); //video api
 
-  //app.get('/<name|.*>', _homeHandler); //home
+  app.get('/<name|.*>', _homeHandler); //home
 
   //add Middleware Pipeline for server
   final handler = Pipeline()
