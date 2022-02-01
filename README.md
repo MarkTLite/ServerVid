@@ -2,7 +2,9 @@
   
 The Dart API for ServerVid. It uses an HTTP server that accesses a GCP Cloud Realtime Database. The API handles requests from a mobile app intending to access video data and display the ones present on the server as well as play them.   
 
-To test it put this in your browser(serves an htm document ) : 
+## Sample endpoint
+To test it put this endpoint in your browser(returns stored video data) : 
+https://servervid-tmkid5tlca-uc.a.run.app/premiered/all
     
 
 ##  Additional information
